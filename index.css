@@ -1,0 +1,80 @@
+:root {
+  --primary-color: rgb(247, 247, 247);
+  --secondary-color: white;
+  --btn-color: white;
+  --btn-focus-color: rgba(0, 167, 222, 0.785);
+  --border-color: rgb(247, 247, 247);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+header {
+  margin: 20px;
+}
+main {
+  display: flex;
+}
+
+footer {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 80px;
+  padding: 20px;
+  background-color: rgb(31, 37, 60);
+  color: whitesmoke;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button {
+  background-color: inherit;
+  padding: 5px;
+  border: solid 1px var(--primary-color);
+  border-radius: 0.25em;
+}
+
+button:hover {
+  color: var(--secondary-color);
+  background-color: var(--btn-focus-color);
+}
+.profile-card {
+  padding: 10px;
+  box-shadow: ;
+  min-width: 300px;
+  max-width: 700px;
+  flex: 1;
+  border-radius: 0.5em;
+  transition: transform 0.2s ease-in-out;
+  background-color: var(--secondary-color);
+  /* border: solid 1px black; */
+}
+
+.profile-card:hover {
+  outline: solid 4px var(--secondary-color);
+  outline-offset: 4px;
+  transform: translateY(-10px);
+}
