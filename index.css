@@ -27,7 +27,7 @@ h4 {
 
 p {
   overflow: hidden;
-  text-align:justify;
+  text-align: justify;
   text-wrap: wrap;
 }
 
@@ -154,6 +154,11 @@ main > *:not(#social-link-list) {
 }
 #social-link-list span {
   display: none;
+}
+
+#social-link-list a:focus {
+  outline: 2px solid var(--btn-focus-color);
+  outline-offset: 2px;
 }
 
 /* media queries */

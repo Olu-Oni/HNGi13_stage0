@@ -21,19 +21,23 @@
           class="profile-pic-container"
           data-testid="test-user-avatar-container"
         >
-          <!-- <img
-               src="/imgs/user-profile.avif"
-               alt="Profile picture"
-               width="50"
-               data-testid="test-user-avatar"
-             /> -->
+          <img
+            src="/imgs/user-profile.avif"
+            alt="Profile picture"
+            data-testid="test-user-avatar"
+          />
+          <figcaption>Profile Picture</figcaption>
         </figure>
         <h2 data-testid="test-user-name">Oni Oluwole</h2>
         <div id="time-container">
           <h4>Current Time:</h4>
           <span data-testid="test-user-time" id="currentTime">
             <script>
-              document.getElementById("currentTime").textContent = Date.now();
+              function updateTime() {
+                document.getElementById("currentTime").textContent = Date.now();
+              }
+              updateTime();
+              setInterval(updateTime, 1000);
             </script>
           </span>
         </div>
@@ -48,80 +52,74 @@
         <section class="user-interests">
           <h3>Hobbies</h3>
           <ul data-testid="test-user-hobbies">
-            <li data-testid="test-user-hobby-photography">Art</li>
-
-            <li data-testid="test-user-hobby-gardening">Food</li>
-            <li data-testid="test-user-hobby-gardening">Gaming</li>
-            <li data-testid="test-user-hobby-chess">Coding</li>
+            <li>Art</li>
+            <li>Food</li>
+            <li>Gaming</li>
+            <li>Coding</li>
           </ul>
         </section>
 
         <section class="user-interests">
           <h3>Dislikes</h3>
           <ul data-testid="test-user-dislikes">
-            <li data-testid="test-user-dislike-traffic">Heavy Traffic</li>
-            <li data-testid="test-user-dislike-loud">Loud Noises</li>
-            <li data-testid="test-user-dislike-cold">Bugs</li>
-            <li data-testid="test-user-dislike-cold">Network Issues</li>
-
-            <li data-testid="test-user-dislike-mornings">Early Mornings</li>
+            <li>Stress</li>
+            <li>Loud Noises</li>
+            <li>Bugs</li>
+            <li>Network Issues</li>
+            <li>Early Mornings</li>
           </ul>
         </section>
 
         <!-- Social Links List -->
-        <ul id="social-link-list" data-testid="test-user-social-links">
-          <li>
-            <a
-              href="https://github.com/Olu-Oni"
-              target="_blank"
-              rel="noreferrer noopener"
-              data-testid="test-user-social-github"
-            >
-              <img
-                width="25"
-                src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
-                alt="github"
-              />
-              <span class="social-word">Github</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/oluwole-oni/"
-              target="_blank"
-              rel="noreferrer noopener"
-              data-testid="test-user-social-linkedIn"
-            >
-              <img
-                width="25"
-                src="https://img.icons8.com/?size=100&id=98960&format=png&color=000000"
-                alt="linkedIn"
-              />
-              <span class="social-word">LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a rel="noreferrer" data-testid="test-user-social-gmail">
-              <img
-                width="25"
-                src="https://img.icons8.com/?size=100&id=85751&format=png&color=000000"
-                alt="gmail"
-              />
-              <span class="social-word">gmail</span>
-            </a>
-          </li>
-        </ul>
+        <nav>
+          <ul id="social-link-list" data-testid="test-user-social-links">
+            <li>
+              <a
+                href="https://github.com/Olu-Oni"
+                target="_blank"
+                rel="noreferrer noopener"
+                data-testid="test-user-social-github"
+              >
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
+                  alt="GitHub"
+                />
+                <span class="social-word">Github</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/oluwole-oni/"
+                target="_blank"
+                rel="noreferrer noopener"
+                data-testid="test-user-social-linkedIn"
+              >
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=98960&format=png&color=000000"
+                  alt="LinkedIn"
+                />
+                <span class="social-word">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/That_Olu"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+              >
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=01GWmP9aUoPj&format=png&color=000000"
+                  alt="Twitter"
+                />
+                <span class="social-word">Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </main>
     </article>
-
-    <!-- Footer with content info -->
-    <!-- <footer role="contentinfo" data-testid="page-footer">
-      <p data-testid="copyright-info">&copy; 2025 Simple Profile App</p>
-      <p data-testid="creator-information">
-        Oni Oluwole Micheal, HNG internship Task, Stage 0
-      </p>
-    </footer> -->
-
-    <!-- <script src="" async defer></script> -->
   </body>
 </html>
