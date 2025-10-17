@@ -5,6 +5,7 @@
   --btn-focus-color: rgba(0, 167, 222, 0.785);
   --border-color: rgb(247, 247, 247);
   --border-radius: 0.75em;
+  --text-color: rgba(20, 20, 20, 0.896);
 }
 
 * {
@@ -15,7 +16,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  color: rgba(20, 20, 20, 0.896);
+  color: var(--text-color)
 }
 
 h3,
