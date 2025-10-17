@@ -4,6 +4,17 @@ h2 {
    margin-right: 20px;
 }
 
+#time-container{
+  width: fit-content;
+  margin: 6px auto 0px auto;
+  border: solid .15em var(--primary-color);
+  outline: solid .1em var(--primary-color);
+  outline-offset: 2px;
+  padding: 3px 10px;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
 header {
   width: 100%;
   position: relative;
@@ -64,6 +75,10 @@ header {
     margin: auto;
     margin-top: 45px;
     font-size: 6;
+  }
+
+  #time-container{
+    margin-top: 8%;
   }
 }
 

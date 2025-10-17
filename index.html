@@ -8,18 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/header.css" />
-    <link rel="stylesheet" href="/content.css" />
   </head>
   <body>
     <!-- Profile Card -->
     <article class="profile-card" data-testid="test-profile-card">
-      <!-- Bacokground image -->
       <header>
-        <span data-testid="background-image" class="background-image">
-          <!-- <img src="/imgs/user-bg-unsplash.avif" alt="background-image" /> -->
-        </span>
-        <!-- User Profile -->
+        <!-- Background image -->
+        <div data-testid="background-image" class="background-image"></div>
 
+        <!-- User Profile Image-->
         <figure
           class="profile-pic-container"
           data-testid="test-user-avatar-container"
@@ -32,65 +29,88 @@
              /> -->
         </figure>
         <h2 data-testid="test-user-name">Oni Oluwole</h2>
+        <div id="time-container">
+          <h4>Current Time:</h4>
+          <span data-testid="test-user-time" id="currentTime">
+            <script>
+              document.getElementById("currentTime").textContent = Date.now();
+            </script>
+          </span>
+        </div>
       </header>
       <main>
         <!-- User details -->
-        <dl data-testid="profile-details">
-          <p data-testid="test-user-bio">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla autem explicabo quam similique, at minus, delectus recusandae quaerat et iure ea dicta veniam provident. Amet qui facere quidem nesciunt doloremque?</p>
-        </dl>
+        <p data-testid="test-user-bio">
+          Technical professional with strong problem-solving skills and a fast
+          learning ability, seeking dynamic opportunities in the tech industry.
+        </p>
 
-        <section class="user-interests" data-testid="test-user-hobbies">
+        <section class="user-interests">
           <h3>Hobbies</h3>
-          <ul>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <!-- <li data-testid="test-user-social-<network>">shtuff</li> -->
-          </ul>
-        </section>
-        <section class="user-interests" data-testid="test-user-dislikes">
-          <h3>Dislikes</h3>
-          <ul>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <li data-testid="test-user-social-<network>">shtuff</li>
-            <li data-testid="test-user-social-<network>">shtuff</li>
+          <ul data-testid="test-user-hobbies">
+            <li data-testid="test-user-hobby-photography">Art</li>
+
+            <li data-testid="test-user-hobby-gardening">Food</li>
+            <li data-testid="test-user-hobby-gardening">Gaming</li>
+            <li data-testid="test-user-hobby-chess">Coding</li>
           </ul>
         </section>
 
-        <!-- Contact actions -->
-        <nav data-testid="test-user-social-links">
-          <ul>
-            <li data-testid="test-user-social-github">
-              <a>
-                <img
-                  width="25"
-                  src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
-                  alt="github"
-                />
-              </a>
-            </li>
-            <li data-testid="test-user-social-linkedIn">
-              <a>
-                <img
-                  width="25"
-                  src="https://img.icons8.com/?size=100&id=98960&format=png&color=000000"
-                  alt="linkedIn"
-                />
-              </a>
-            </li>
-            <li data-testid="test-user-social-gmail">
-              <a>
-                <img
-                  width="25"
-                  src="https://img.icons8.com/?size=100&id=85751&format=png&color=000000"
-                  alt="gmail"
-                />
-              </a>
-            </li>
+        <section class="user-interests">
+          <h3>Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li data-testid="test-user-dislike-traffic">Heavy Traffic</li>
+            <li data-testid="test-user-dislike-loud">Loud Noises</li>
+            <li data-testid="test-user-dislike-cold">Bugs</li>
+            <li data-testid="test-user-dislike-cold">Network Issues</li>
+
+            <li data-testid="test-user-dislike-mornings">Early Mornings</li>
           </ul>
-        </nav>
+        </section>
+
+        <!-- Social Links List -->
+        <ul id="social-link-list" data-testid="test-user-social-links">
+          <li>
+            <a
+              href="https://github.com/Olu-Oni"
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid="test-user-social-github"
+            >
+              <img
+                width="25"
+                src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
+                alt="github"
+              />
+              <span class="social-word">Github</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/oluwole-oni/"
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid="test-user-social-linkedIn"
+            >
+              <img
+                width="25"
+                src="https://img.icons8.com/?size=100&id=98960&format=png&color=000000"
+                alt="linkedIn"
+              />
+              <span class="social-word">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a rel="noreferrer" data-testid="test-user-social-gmail">
+              <img
+                width="25"
+                src="https://img.icons8.com/?size=100&id=85751&format=png&color=000000"
+                alt="gmail"
+              />
+              <span class="social-word">gmail</span>
+            </a>
+          </li>
+        </ul>
       </main>
     </article>
 
