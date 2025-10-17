@@ -7,70 +7,100 @@
     <meta name="description" content="Simple" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/header.css" />
+    <link rel="stylesheet" href="/content.css" />
   </head>
   <body>
-    <!-- Added role="banner" for better landmark identification -->
-    <header role="banner">
-      <!-- Using proper heading hierarchy -->
-      <h1 data-testid="page-title">Simple Profile Card</h1>
-    </header>
-
-    <!-- Main content landmark with proper ID for skip links -->
-    <main id="main-content" data-testid="main-content">
-      <!-- Profile Card -->
-      <article class="profile-card" data-testid="profile-card">
-        <!-- Bacokground image -->
-        <section></section>
+    <!-- Profile Card -->
+    <article class="profile-card" data-testid="test-profile-card">
+      <!-- Bacokground image -->
+      <header>
+        <span data-testid="background-image" class="background-image">
+          <!-- <img src="/imgs/user-bg-unsplash.avif" alt="background-image" /> -->
+        </span>
         <!-- User Profile -->
 
-        <span class="profile-pic-container" data-testid="profile-picture-container">
-          <img
-            src="/imgs/user-profile.avif"
-            alt="Profile picture"
-            width="50"
-            data-testid="profile-image"
-          />
-        </span>
-
+        <figure
+          class="profile-pic-container"
+          data-testid="test-user-avatar-container"
+        >
+          <!-- <img
+               src="/imgs/user-profile.avif"
+               alt="Profile picture"
+               width="50"
+               data-testid="test-user-avatar"
+             /> -->
+        </figure>
+        <h2 data-testid="test-user-name">Oni Oluwole</h2>
+      </header>
+      <main>
         <!-- User details -->
         <dl data-testid="profile-details">
-          <dd data-testid="email-value">oluomicheal8@gmail.com</dd>
-
-          <dd data-testid="location-value">New York, NY</dd>
-
-          <dd data-testid="bio-value">
-            Passionate about web accessibility and user experience.
-          </dd>
+          <p data-testid="test-user-bio">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla autem explicabo quam similique, at minus, delectus recusandae quaerat et iure ea dicta veniam provident. Amet qui facere quidem nesciunt doloremque?</p>
         </dl>
 
-        <!-- Contact actions -->
-        <section data-testid="contact-section">
-          <div
-            role="group"
-            aria-label="Contact options"
-            data-testid="contact-options"
-          >
-            <button data-testid="email-button" aria-label="Send email to John">
-              Email
-            </button>
-            <button
-              data-testid="message-button"
-              aria-label="Send message to John"
-            >
-              Message
-            </button>
-          </div>
+        <section class="user-interests" data-testid="test-user-hobbies">
+          <h3>Hobbies</h3>
+          <ul>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <!-- <li data-testid="test-user-social-<network>">shtuff</li> -->
+          </ul>
         </section>
-      </article>
-    </main>
+        <section class="user-interests" data-testid="test-user-dislikes">
+          <h3>Dislikes</h3>
+          <ul>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+            <li data-testid="test-user-social-<network>">shtuff</li>
+          </ul>
+        </section>
+
+        <!-- Contact actions -->
+        <nav data-testid="test-user-social-links">
+          <ul>
+            <li data-testid="test-user-social-github">
+              <a>
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
+                  alt="github"
+                />
+              </a>
+            </li>
+            <li data-testid="test-user-social-linkedIn">
+              <a>
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=98960&format=png&color=000000"
+                  alt="linkedIn"
+                />
+              </a>
+            </li>
+            <li data-testid="test-user-social-gmail">
+              <a>
+                <img
+                  width="25"
+                  src="https://img.icons8.com/?size=100&id=85751&format=png&color=000000"
+                  alt="gmail"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </main>
+    </article>
 
     <!-- Footer with content info -->
-    <footer role="contentinfo" data-testid="page-footer">
+    <!-- <footer role="contentinfo" data-testid="page-footer">
       <p data-testid="copyright-info">&copy; 2025 Simple Profile App</p>
       <p data-testid="creator-information">
         Oni Oluwole Micheal, HNG internship Task, Stage 0
       </p>
-    </footer>
+    </footer> -->
 
     <!-- <script src="" async defer></script> -->
   </body>
