@@ -16,7 +16,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 h3,
@@ -46,9 +46,21 @@ body {
   align-items: center;
   background-color: var(--primary-color);
   transition: all 0.2s ease-in-out;
+  position: relative;
   /* font-size: 14px; */
 }
 
+nav {
+  margin: 20px;
+  display: flex;
+  gap: 15px;
+  position: fixed;
+  top: 10px;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.382);
+  padding: 3px 6px;
+  border-radius: var(--border-radius);
+}
 button,
 a {
   cursor: pointer;
