@@ -1,45 +1,103 @@
-body {
-  font: 1em sans-serif;
-  width: 200px;
-  padding: 0;
-  margin: 0 auto;
+main {
+  margin-top: 50px;
 }
 
-p * {
-  display: block;
+#contact-header {
+  text-align: center;
 }
 
-input[type="email"] {
+form {
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.form-group {
+  min-width: 220px;
+  max-width: 500px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+label{
+    font-size: 14px;
+    color: rgba(29, 29, 29, 0.712);
+}
+button[type="submit"] {
+  background-color: var(--btn-focus-color);
+  width: 150px;
+  height: 35px;
+  font-size: medium;
+  font-weight: 600;
+  color: var(--secondary-color);
+  outline-offset: 3px;
+}
+button[type="submit"]:hover, button[type="submit"]:focus {
+  outline: .15em solid var(--btn-focus-color);
+  
+}
+button[type="submit"]:active {
+  color: var(--btn-focus-color);
+  background-color: var(--secondary-color);
+  outline: 3px solid var(--btn-focus-color);
+  
+}
+
+.form-group input,
+.form-group textarea {
+  margin-top: 6px;
+}
+
+input,
+textarea {
   appearance: none;
-
-  width: 100%;
-  border: 1px solid #333333;
+  max-width: 100%;
+  max-height: 100px;
+  border-bottom: 1px solid var(--input-border-color);
+  background-color: var(--primary-color);
   margin: 0;
-
+  padding: 1px;
   font-family: inherit;
   font-size: 90%;
-
+  min-height: 30px;
+  outline-offset: 3px;
+  border-radius: 0.1em;
   box-sizing: border-box;
 }
 
 /* invalid fields */
-input:invalid {
-  border-color: #990000;
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--err-btn-focus-color);
   background-color: #ffdddd;
 }
 
-input:focus:invalid {
-  outline: none;
+input:focus:user-invalid,
+textarea:focus:user-invalid {
+  outline: solid 0.2em var(--err-btn-focus-color);
+}
+input:focus,
+textarea:focus {
+  outline: solid 0.2em var(--btn-focus-color);
 }
 
 /* error message styles */
 .error {
   width: 100%;
   padding: 0;
-
+  display: block;
+  margin: 4px 2px;
   font-size: 80%;
-  color: white;
-  background-color: #990000;
+  color: #990000;
   border-radius: 0 0 5px 5px;
 
   box-sizing: border-box;
