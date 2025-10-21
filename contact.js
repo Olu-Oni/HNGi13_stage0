@@ -69,7 +69,6 @@ function checkError(fieldName, message) {
   const inputEl = document.getElementById(fieldName);
 
   if (inputEl.validity.valueMissing || inputEl.value.trim() === "") {
-    inputEl.validity.valid = false;
     errorEl.textContent = `${message} is required`;
   } else if (
     inputEl.validity.typeMismatch ||

@@ -62,6 +62,14 @@ aside {
     grid-column: 2/3;
 } */
 
+section[data-testid="test-about-bio"] h3 {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 section ul {
   display: flex;
   flex-wrap: wrap;
