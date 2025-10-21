@@ -8,6 +8,7 @@
   --input-border-color: rgb(178, 178, 178);
   --border-radius: 0.75em;
   --text-color: rgba(20, 20, 20, 0.896);
+  --sec-text-color: rgba(6, 6, 43, 0.577);
 }
 
 * {
@@ -19,6 +20,11 @@
   outline: none;
   border: none;
   color: var(--text-color);
+  transition: color none;
+}
+
+h2 {
+  color: rgba(17, 37, 71, 0.621);
 }
 
 h3,
@@ -30,8 +36,8 @@ h4 {
 
 p {
   overflow: hidden;
-  text-align: justify;
   text-wrap: wrap;
+  line-height: 2.5ch;
 }
 
 li {
@@ -41,7 +47,7 @@ li {
 body {
   /* min-width: 100dvw; */
   font: 1em sans-serif;
-  padding: 20px;
+  padding: 20px 10px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -53,28 +59,32 @@ body {
   /* font-size: 14px; */
 }
 
+main {
+  position: relative;
+  margin-top: 65px;
+  width: 100%;
+}
+
 nav {
-  margin: 20px;
+  margin: 10px;
   display: flex;
   align-items: center;
   gap: 15px;
   position: fixed;
   top: 10px;
   z-index: 40;
-  background: #5c463f29;
-  padding: 4px 7px;
+  background: #6d6d6d29;
+  padding: 6px 10px;
   border-radius: 2rem;
-  backdrop-filter: blur(100%);
+  backdrop-filter: blur(9px);
 }
 
 nav > a {
   backdrop-filter: invert(20%);
-  padding: 4px;
+  padding: 4px 6px;
   transition: all 0.1s ease-in-out;
   border-radius: 2rem;
-  font-weight: 600;
   color: white;
-  /* mix-blend-mode: difference; */
 }
 nav > a:focus,
 nav > a:hover {
@@ -211,7 +221,7 @@ button:hover {
 }
 @media screen and (min-width: 425px) {
   body {
-    padding: 20px 40px;
+    padding: 20px;
   }
   #social-link-list {
     gap: 4%;
@@ -225,6 +235,10 @@ button:hover {
   }
 }
 @media screen and (min-width: 600px) {
+  body {
+    padding: 20px 40px;
+  }
+
   #social-link-list span {
     display: block;
   }
@@ -233,6 +247,14 @@ button:hover {
 @media screen and (min-width: 768px) {
   body {
     padding: 80px 6%;
+  }
+
+  main {
+    margin-top: 15px;
+  }
+
+  p {
+    text-align: justify;
   }
 
   .profile-card {

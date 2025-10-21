@@ -1,8 +1,4 @@
-main {
-  position: relative;
-  margin-top: 50px;
-  width: 100%;
-}
+
 
 #contact-header {
   text-align: center;
@@ -16,7 +12,8 @@ form {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  min-width: 100%;
+  width: 100%;
+  min-width: 180px;
   
 }
 
@@ -26,7 +23,7 @@ form {
   gap: 30px;
 }
 .form-group {
-  min-width: 220px;
+  min-width: 170px;
   max-width: 500px;
   flex: 1;
   display: flex;
