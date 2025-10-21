@@ -56,13 +56,30 @@ body {
 nav {
   margin: 20px;
   display: flex;
+  align-items: center;
   gap: 15px;
   position: fixed;
   top: 10px;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.382);
-  padding: 3px 6px;
-  border-radius: var(--border-radius);
+  background: #5c463f29;
+  padding: 4px 7px;
+  border-radius: 2rem;
+  backdrop-filter: blur(100%);
+}
+
+nav > a {
+  backdrop-filter: invert(20%);
+  padding: 4px;
+  transition: all 0.1s ease-in-out;
+  border-radius: 2rem;
+  font-weight: 600;
+  color: white;
+  /* mix-blend-mode: difference; */
+}
+nav > a:focus,
+nav > a:hover {
+  scale: 115%;
+  outline: solid 0.15em;
 }
 button,
 a {
@@ -215,7 +232,7 @@ button:hover {
 /* Styles for tablets (768px and up) */
 @media screen and (min-width: 768px) {
   body {
-    padding: 60px 6%;
+    padding: 80px 6%;
   }
 
   .profile-card {
@@ -228,7 +245,7 @@ button:hover {
 /* Styles for desktops (1024px and up) */
 @media screen and (min-width: 1024px) {
   body {
-    padding: 60px 10%;
+    padding: 80px 10%;
   }
   .profile-card {
     gap: 20px;

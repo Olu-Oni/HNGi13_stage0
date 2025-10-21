@@ -3,7 +3,9 @@ const successDiv = document.querySelector(
   '[data-testid="test-contact-success"]'
 );
 
-const handleSubmit = (event)=>{
+form.addEventListener('submit', (e)=>handleSubmit(e));
+
+const handleSubmit = (event) => {
   event.preventDefault();
 
   // Reset errors
@@ -17,62 +19,79 @@ const handleSubmit = (event)=>{
 
   successDiv.style.display = "none";
 
-  const fields = {
-    name: document.getElementById("fullName").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    subject: document.getElementById("subject").value.trim(),
-    message: document.getElementById("message").value.trim(),
+  const fieldsValidity = {
+    name: {
+      element: document.getElementById("name"),
+      isValid: document.getElementById("name").validity.valid,
+    },
+    email: {
+      element: document.getElementById("email"),
+      isValid: document.getElementById("email").validity.valid,
+    },
+    subject: {
+      element: document.getElementById("subject"),
+      isValid: document.getElementById("subject").validity.valid,
+    },
+    message: {
+      element: document.getElementById("message"),
+      isValid: document.getElementById("message").validity.valid,
+    },
   };
 
-  let isValid = true;
-
   // Validate full name
-  if (!fields.name) {
-    showError("name", "Full name is required");
-    isValid = false;
-  }
+  checkError("name", "Full name");
 
   // Validate email
-  if (!fields.email) {
-    showError("email", "Email is required");
-    isValid = false;
-  } else if (!isValidEmail(fields.email)) {
-    showError("email", "Please enter a valid email");
-    isValid = false;
-  }
+  checkError("email", "Email");
 
   // Validate subject
-  if (!fields.subject) {
-    showError("subject", "Subject is required");
-    isValid = false;
-  }
+  checkError("subject", "Subject");
 
   // Validate message
-  if (!fields.message) {
-    showError("message", "Message is required");
-    isValid = false;
-  }
+  checkError("message", "Message");
 
-  if (isValid) {
-    successDiv.textContent =
-      "Thank you! Your message has been sent successfully.";
-    successDiv.style.display = "block";
-    form.reset();
+  //   if everything is valid
+  if (
+    fieldsValidity.name.isValid &&
+    fieldsValidity.email.isValid &&
+    fieldsValidity.subject.isValid &&
+    fieldsValidity.message.isValid
+  ) {
+    clearTimeout()
+    setTimeout(() => {
+      successDiv.textContent =
+        "Thank you! Your message has been sent successfully.";
+      successDiv.style.display = "block";
+      form.reset();
+    }, 2000);
   }
 };
 
-function showError(fieldName, message) {
+function checkError(fieldName, message) {
+  isFakeValid = false;
+  //   collect the specific field error span
   const errorEl = document.querySelector(
     `[data-testid="test-contact-error-${fieldName}"]`
   );
-  const inputEl = document.getElementById(
-    fieldName === "name" ? "fullName" : fieldName
-  );
-  errorEl.textContent = message;
-  inputEl.classList.add("invalid");
-}
 
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  //   collect the specific field
+  const inputEl = document.getElementById(fieldName);
+  //   errorEl.textContent = message;
+
+  if (inputEl.validity.valueMissing || inputEl.value.trim() === "") {
+    inputEl.validity.valid = false;
+    errorEl.textContent = `${message} is required`;
+  } else if (
+    inputEl.validity.typeMismatch ||
+    inputEl.validity.patternMismatch
+  ) {
+    if (fieldName === "email") {
+      errorEl.textContent = `please enter a valid ${fieldName} (name@example.com).`;
+    } else {
+      errorEl.textContent = `please enter a valid ${fieldName} (text only)`;
+    }
+  } else if (inputEl.validity.tooShort) {
+    errorEl.textContent = `${message} must be at least 10 characters long`;
+  }
+  //   inputEl.classList.add("invalid");
 }
