@@ -3,19 +3,13 @@ const successDiv = document.querySelector(
   '[data-testid="test-contact-success"]'
 );
 
-form.addEventListener('submit', (e)=>handleSubmit(e));
+form.addEventListener("submit", (e) => handleSubmit(e));
 
 const handleSubmit = (event) => {
   event.preventDefault();
 
   // Reset errors
   document.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
-
-  //   Possibly useless code
-  document
-    .querySelectorAll("input, textarea")
-    .forEach((el) => el.classList.remove("invalid"));
-  //
 
   successDiv.style.display = "none";
 
@@ -57,13 +51,10 @@ const handleSubmit = (event) => {
     fieldsValidity.subject.isValid &&
     fieldsValidity.message.isValid
   ) {
-    clearTimeout()
-    setTimeout(() => {
-      successDiv.textContent =
-        "Thank you! Your message has been sent successfully.";
-      successDiv.style.display = "block";
-      form.reset();
-    }, 2000);
+    successDiv.textContent =
+      "Thank you! Your message has been sent successfully.";
+    successDiv.style.display = "block";
+    form.reset();
   }
 };
 
@@ -76,7 +67,6 @@ function checkError(fieldName, message) {
 
   //   collect the specific field
   const inputEl = document.getElementById(fieldName);
-  //   errorEl.textContent = message;
 
   if (inputEl.validity.valueMissing || inputEl.value.trim() === "") {
     inputEl.validity.valid = false;
@@ -93,5 +83,4 @@ function checkError(fieldName, message) {
   } else if (inputEl.validity.tooShort) {
     errorEl.textContent = `${message} must be at least 10 characters long`;
   }
-  //   inputEl.classList.add("invalid");
 }
