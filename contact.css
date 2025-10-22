@@ -20,6 +20,7 @@ form {
 #name-email-field {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 30px;
 }
 .form-group {
@@ -118,4 +119,10 @@ font-size: 11px;
 
 .error.active {
   padding: 0.3em;
+}
+
+@media screen and (min-width:600px) {
+  form{
+    padding: 40px;
+  }
 }
